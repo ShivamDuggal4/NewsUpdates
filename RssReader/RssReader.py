@@ -222,6 +222,9 @@ if __name__ == "__main__":
 
 	if sys.argv[1] == "thehindu":
 		config_file[0]["link"] =  "http://www.thehindu.com/" + str(sys.argv[2]) + "/?service=rss"	
+	if sys.argv[1] == "economictimes":
+		a = sys.argv[2].split('$$$')
+		config_file[0]["link"] =  "https://economictimes.indiatimes.com/" + str(a[0]) + "/rssfeeds/" + str(a[1]) + ".cms"
 		
 	f = open('conf.json','w')
 	json.dump(config_file,f)
